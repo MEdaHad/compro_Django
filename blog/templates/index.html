@@ -106,113 +106,28 @@
             <div class="col-lg-9 col-md-12 ">
                 <div class="tab-content">
                     <div class="tab-pane active show fade" id="hot_all" role="tabpanel">
+                        {% for post in post_list %}
                         <div class="row">
                             <div class="col-lg-4 col-md-6">
                                 <div class="single__product">
                                     <div class="produc_thumb">
-                                        <a href="product-details.html"><img src="{{ post.image.url }}" alt=""></a>
+                                        <a href="{% url 'post_detail' post.slug  %}"><img src="{{ post.image.url }}" alt=""></a>
                                     </div>
                                     <div class="product_hover">
                                         
                                         <div class="product__desc">
                                             
-                                            <h3><a href="product-details.html">{{ post.title }}</a></h3>
+                                            <h3><a href="">{{ post.title }}</a></h3>
+                                            <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                                             
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single__product">
-                                    <div class="produc_thumb">
-                                        <a href="product-details.html"><img src="{% static 'blog/img/product/2.png' %}" alt=""></a>
-                                    </div>
-                                    <div class="product_hover">
-                                        
-                                        <div class="product__desc">
-                                            <h3><a href="product-details.html">Alloy Shimano z3</a></h3>
-                                            <div class="price_amount">
-                                                <span class="current_price">Birr 2999.99</span>
-                                                <span class="discount_price">-08%</span>
-                                                <span class="old_price">Birr 3700.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single__product">
-                                    <div class="produc_thumb">
-                                        <a href="product-details.html"><img src="{% static 'blog/img/product/3.png' %}" alt=""></a>
-                                    </div>
-                                    <div class="product_hover">
-                                        
-                                        <div class="product__desc">
-                                            <h3><a href="product-details.html">Full Slev Shirt</a></h3>
-                                            <div class="price_amount">
-                                                <span class="current_price">Birr 2999.99</span>
-                                                <span class="discount_price">-08%</span>
-                                                <span class="old_price">Birr 3700.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single__product">
-                                    <div class="produc_thumb">
-                                        <a href="product-details.html"><img src="{% static 'blog/img/product/4.png' %}" alt=""></a>
-                                    </div>
-                                    <div class="product_hover">
-                                        
-                                        <div class="product__desc">
-                                            <h3><a href="product-details.html">Soffer Pro x33</a></h3>
-                                            <div class="price_amount">
-                                                <span class="current_price">Birr 2999.99</span>
-                                                <span class="discount_price">-08%</span>
-                                                <span class="old_price">Birr 3700.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single__product">
-                                    <div class="produc_thumb">
-                                        <a href="product-details.html"><img src="{% static 'blog/img/product/5.png' %}" alt=""></a>
-                                    </div>
-                                    <div class="product_hover">
-                                        
-                                        <div class="product__desc">
-                                            <h3><a href="product-details.html">Full Slev Hudy</a></h3>
-                                            <div class="price_amount">
-                                                <span class="current_price">Birr 2999.99</span>
-                                                <span class="discount_price">-08%</span>
-                                                <span class="old_price">Birr 3700.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single__product">
-                                    <div class="produc_thumb">
-                                        <a href="product-details.html"><img src="{% static 'blog/img/product/6.png' %}" alt=""></a>
-                                    </div>
-                                    <div class="product_hover">
-                                        
-                                        <div class="product__desc">
-                                            <h3><a href="product-details.html">Alloy Shimano z3</a></h3>
-                                            <div class="price_amount">
-                                                <span class="current_price">Birr 2999.99</span>
-                                                <span class="discount_price">-08%</span>
-                                                <span class="old_price">Birr 3700.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
                         </div>
+                        {% endfor %}
                     </div>
                     <div class="tab-pane fade" id="hot_bike" role="tabpanel">
                         <div class="row">

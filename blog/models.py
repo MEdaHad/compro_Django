@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from PIL import Image
 
 
 
@@ -12,11 +13,13 @@ class Post(models.Model):
 
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['created_on']
 
     def __str__(self):
         return self.title
 
+    def save(self):
+        super().save()
 
         img = Image.open(self.image.path)
 
@@ -24,3 +27,5 @@ class Post(models.Model):
             output_size = (288, 370)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
+

@@ -3376,4 +3376,20 @@ h5.panel-title {
 .error_form a:hover{
     background: #000;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column: 1 / 4;
+}
 /*error page css end*/

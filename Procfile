@@ -1,0 +1,1 @@
+web: gunicorn LeakeTesfayMain.wsgi --log-file -

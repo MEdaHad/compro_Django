@@ -12,9 +12,9 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'uq$3zo91%z7u0!7m*wn1e9j8#qneybas&t_0tb=$coo_wx&-5w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['leaketesfay.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

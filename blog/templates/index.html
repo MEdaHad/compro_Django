@@ -10,10 +10,11 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="slider-content slider-text-animation">
-                            <h1>Best Deal</h1>
-                            <h2>15% - 20% Off</h2>
-                            <p>Simply dummy text of the printing and typesetting. </p>
-                            <a href="#">Buy Now</a>									
+                            <h1>Descover your next Vehicle </h1>
+                            <h2>Online</h2>
+                            <p>You deserve the best service
+                                and that’s what we deliver   </p>
+                            <a href="{% url 'contact' %}">Buy Now</a>									
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -30,10 +31,11 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="slider-content slider-text-animation">
-                            <h1>Best Deal</h1>
-                            <h2>15% - 20% Off</h2>
-                            <p>Simply dummy text of the printing and typesetting. </p>
-                            <a href="#">Buy Now</a>									
+                            <h1>Fullfill your Vehicle need's</h1>
+                            <h2>Online</h2>
+                            <p>You deserve the best service
+                                and that’s what we deliver   </p>
+                            <a href="{% url 'contact' %}">Buy Now</a>									
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -51,10 +53,11 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="slider-content slider-text-animation">
-                            <h1>Best Deal</h1>
-                            <h2>15% - 20% Off</h2>
-                            <p>Simply dummy text of the printing and typesetting. </p>
-                            <a href="#">Buy Now</a>									
+                            <h1>Descover your next Vehicle </h1>
+                            <h2>Online</h2>
+                            <p>You deserve the best service
+                                and that’s what we deliver   </p>
+                            <a href="{% url 'contact' %}">Buy Now</a>									
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -96,38 +99,53 @@
         <div class="row align-items-end">
             <div class="col-lg-3 col-md-3 col-12">
                 <div class="section_title">
-                    <h2>Hot Deals</h2>
+                    <h2>Latest Products</h2>
                 </div>
             </div>
             <div class="col-lg-9 col-md-9">
                 <div class="nav product_tab_menu justify-content-end" role="tablist"></div>
             </div>
-        </div>
+        </div> 
+        <div class="row mt-60">
+            <div class="col-lg-12 col-lg-12 ">
+                <div class="tab-content">
+                    
+                    <div class="tab-pane active show fade" id="hot_all" role="tabpanel">
+                        
+                        <div class="row">
+                            {% for post in post_list|slice:6 %}
+                                
 
-        <div class="row" style="padding-right: 30%; padding-top: 5%; width: 90%; padding-bottom: 5%;">
-             {% for post in post_list %}
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body"
-                     <a><img src="{{ post.image.url }}" alt=""  style="width: 288px; height: 390px;" ></a>
-                      <h3><a href="">{{ post.title }}</a></h3>
-                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
 
-        </div>
 
-     <div class="col-lg-3 col-md-12">
-                <div class="single_banner long_hot_detals d-lg-none">
-                    <a href="#"><img src="{% static 'blog/img/banner/banner_tab_1.jpg' %}" alt="Shop Banner"></a>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="single__product">
+                                        <div class="produc_thumb">
+                                            <a href="{% url 'post_detail' post.slug  %}"><img src="{{ post.image.url }}" alt=""></a>
+                                        </div>
+                                        <div class="product_hover">
+                                            
+                                            <div class="product__desc">
+                                                <h3><a href="">{{ post.title }}</a></h3>
+                                                <div class="price_amount">
+                                                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}                            
+                            
+                        </div>
+                        
+                    </div>
+                    
                 </div>
-                <div class="single_banner long_hot_detals d-none d-lg-block">
-                    <a href="#"><img src="{% static 'blog/img/banner/4.jpg' %}" alt="Shop Banner"></a>
-                </div>
+                
             </div>
         </div>
+    </div>        
+</div>
 
 
 
@@ -160,7 +178,7 @@
                                 <a href=""><img src="{% static 'blog/img/product/pro_sm_1.png' %}" alt=""></a>
                             </div>
                             <div class="product__desc">
-                                <h3><a href="">Soffer Pro x33</a></h3>
+                                <h3><a href="">Durable Spares</a></h3> 
                                 <div class="product_ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -169,9 +187,8 @@
                                     <i class="fa fa-star-o"></i>
                                 </div>
                                 <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
+                                    <span class="current_price">Fair Price</span>
+                                    <span class="old_price">OverPrice</span>
                                 </div>
                             </div>
 
@@ -180,8 +197,9 @@
                             <div class="produc_thumb">
                                 <a href=""><img src="{% static 'blog/img/product/pro_sm_2.png' %}" alt=""></a>
                             </div>
+
                             <div class="product__desc">
-                                <h3><a href="">Soffer Pro x33</a></h3>
+                                <h3><a href="">Original Products</a></h3>
                                 <div class="product_ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -190,9 +208,9 @@
                                     <i class="fa fa-star-half-o"></i>
                                 </div>
                                 <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
+                                    <span class="current_price">All</span>
+                                    <span class="discount_price">100%</span>
+                                    <span class="current_price">original</span>
                                 </div>
                             </div>
 
@@ -201,8 +219,9 @@
                             <div class="produc_thumb">
                                 <a href=""><img src="{% static 'blog/img/product/pro_sm_3.png' %}" alt=""></a>
                             </div>
+
                             <div class="product__desc">
-                                <h3><a href="#">Lotafaj una khdii</a></h3>
+                                <h3><a href="#">Rating</a></h3>
                                 <div class="product_ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -211,144 +230,14 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
+                                    <span class="current_price">Reliable</span>
+                                    <span class="discount_price">100%</span>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="best_selling_single">
-                        <div class="single__product_sm mb-30">
-                            <div class="produc_thumb">
-                                <a href=""><img src="{% static 'blog/img/product/pro_sm_1.png' %}" alt=""></a>
-                            </div>
-                            <div class="product__desc">
-                                <h3><a href="">Soffer Pro x33</a></h3>
-                                <div class="product_ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="single__product_sm mb-30">
-                            <div class="produc_thumb">
-                                <a href=""><img src="{% static 'blog/img/product/pro_sm_2.png' %}" alt=""></a>
-                            </div>
-                            <div class="product__desc">
-                                <h3><a href="">Soffer Pro x33</a></h3>
-                                <div class="product_ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="single__product_sm">
-                            <div class="produc_thumb">
-                                <a href=""><img src="{% static 'blog/img/product/pro_sm_3.png' %}" alt=""></a>
-                            </div>
-                            <div class="product__desc">
-                                <h3><a href="#">Lotafaj una khdii</a></h3>
-                                <div class="product_ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="best_selling_single">
-                        <div class="single__product_sm mb-30">
-                            <div class="produc_thumb">
-                                <a href=""><img src="{% static 'blog/img/product/pro_sm_1.png' %}" alt=""></a>
-                            </div>
-                            <div class="product__desc">
-                                <h3><a href="">Soffer Pro x33</a></h3>
-                                <div class="product_ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="single__product_sm mb-30">
-                            <div class="produc_thumb">
-                                <a href=""><img src="{% static 'blog/img/product/pro_sm_2.png' %}" alt=""></a>
-                            </div>
-                            <div class="product__desc">
-                                <h3><a href="">Soffer Pro x33</a></h3>
-                                <div class="product_ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="single__product_sm">
-                            <div class="produc_thumb">
-                                <a href=""><img src="{% static 'blog/img/product/pro_sm_3.png' %}" alt=""></a>
-                            </div>
-                            <div class="product__desc">
-                                <h3><a href="#">Lotafaj una khdii</a></h3>
-                                <div class="product_ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="price_amount">
-                                    <span class="current_price">Birr 2999.99</span>
-                                    <span class="discount_price">-08%</span>
-                                    <span class="old_price">Birr 3700.00</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

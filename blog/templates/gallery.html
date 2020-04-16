@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block content %}
+
+
+<div class="exporso_wrapper">
+   
+  
+    
+    <!--shop area start-->
+    <div class="shop_area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active show fade" id="grid_view" role="tabpanel">
+                            <div class="row">
+                                {% for PostGallery in post_list %}
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single__product">
+                                        <span class="pro_badge">New</span>
+                                        <div class="produc_thumb">
+                                            <a href="{% url 'post_detail' PostGallery.slug  %}"><img src="{{ PostGallery.image.url }}" alt=""></a>
+                                        </div>
+                                        <div class="product_hover">
+                                            <div class="product_action">
+                                                <h4>{% block title %} {{ object.title }} {% endblock title %}</h4>
+                                            </div>
+                                            <div class="product__desc">
+                                                <h3><a href="product-details.html">Soffer Pro x33</a></h3>
+                                                <div class="price_amount">
+                                                    <p class=" text-muted">{{ PostGallery.author }} | {{ PostGallery.created_on }}</p>                                                              
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %} 
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
